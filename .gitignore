@@ -1,0 +1,25 @@
+node_modules/
+dist/
+build/
+*.local
+.env
+.env.*
+!.env.example
+server/data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+.DS_Store
+*.log
+npm-debug.log*
+test-results/
+playwright-report/
+blob-report/
+.playwright/
+coverage/
+.vscode/
+.idea/
+
+# Editor/agent tooling
+.claude/

@@ -1,0 +1,29 @@
+{
+  "name": "attack-on-token-v2",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Attack on Token V2 \u2014 QUOTIENT, an enterprise token governance cloud that is beautiful, fully functional, and intentionally infuriating.",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,web -c cyan,magenta \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "npm -w server run dev",
+    "dev:web": "npm -w web run dev",
+    "seed": "npm -w server run seed",
+    "build": "npm -w web run build",
+    "start": "npm run build && npm -w server run start",
+    "test": "npm -w server test",
+    "test:e2e": "playwright test",
+    "typecheck": "npm -w server run typecheck && npm -w web run typecheck",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "concurrently": "^9.1.2"
+  }
+}
